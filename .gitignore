@@ -1,4 +1,4 @@
-# islt application files
+# Built application files
 *.apk
 *.ap_
 *.aab
@@ -29,19 +29,4 @@ lint/intermediates/
 lint/generated/
 lint/outputs/
 lint/tmp/
-lint/reports/tayeri
-
-# Gradle files
-.gradle/
-
-# User-specific configurations
-*.iml
-
-# OS-specific files
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
+lint/reports/
