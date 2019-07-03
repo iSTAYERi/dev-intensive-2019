@@ -32,14 +32,14 @@ enum class TimeUnits{
     SECOND,
     MINUTE,
     HOUR,
-    DAY
-}
+    DAY;
 
-fun TimeUnits.plural(value: Int): String {
-    return when (this) {
-        TimeUnits.SECOND -> Plural("секунду", "секунды", "секунд").getPlural(value.toLong())
-        TimeUnits.MINUTE -> Plural("минуту", "минуты", "минут").getPlural(value.toLong())
-        TimeUnits.HOUR -> Plural("час", "часа", "часов").getPlural(value.toLong())
-        TimeUnits.DAY -> Plural("день", "дня", "дней").getPlural(value.toLong())
+    fun plural(value: Int): String {
+        return when (this) {
+            SECOND -> Plural("секунду", "секунды", "секунд").getPlural(value.toLong())
+            MINUTE -> Plural("минуту", "минуты", "минут").getPlural(value.toLong())
+            HOUR -> Plural("час", "часа", "часов").getPlural(value.toLong())
+            DAY -> Plural("день", "дня", "дней").getPlural(value.toLong())
+        }
     }
 }
