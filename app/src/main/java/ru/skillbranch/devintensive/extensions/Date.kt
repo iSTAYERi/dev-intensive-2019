@@ -1,5 +1,6 @@
 package ru.skillbranch.devintensive.extensions
 
+import ru.skillbranch.devintensive.models.Plural
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -14,7 +15,7 @@ fun Date.format(pattern: String = "HH:mm:ss dd.MM.yy"): String {
 }
 
 fun Date.add(value: Int, units: TimeUnits): Date {
-    var time = this.time
+    var time = time
 
     time += when (units) {
         TimeUnits.SECOND -> value * SECOND
@@ -32,4 +33,13 @@ enum class TimeUnits{
     MINUTE,
     HOUR,
     DAY
+}
+
+fun TimeUnits.plural(value: Int): String {
+    return when (this) {
+        TimeUnits.SECOND -> Plural("секунду", "секунды", "секунд").getPlural(value.toLong())
+        TimeUnits.MINUTE -> Plural("минуту", "минуты", "минут").getPlural(value.toLong())
+        TimeUnits.HOUR -> Plural("час", "часа", "часов").getPlural(value.toLong())
+        TimeUnits.DAY -> Plural("день", "дня", "дней").getPlural(value.toLong())
+    }
 }
