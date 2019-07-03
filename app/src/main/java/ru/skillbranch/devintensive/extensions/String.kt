@@ -2,12 +2,12 @@ package ru.skillbranch.devintensive.extensions
 
 
 fun String.truncate(value: Int = 16): String {
-    return if (this.length <= value) {
-        this.trim()
+    val trimmed = this.trim()
+    return if (trimmed.length <= value) {
+        trimmed
     } else {
-        this.slice(0 until value).trim().plus("...")
+        trimmed.slice(0 until value).trim().plus("...")
     }
-
 }
 
 /**
