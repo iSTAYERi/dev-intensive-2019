@@ -12,12 +12,16 @@ class Bender(var status: Status = Status.NORMAL, var question: Question = Questi
     }
 
     fun listenAnswer(answer: String): Pair<String, Triple<Int, Int, Int>> {
-        return if (question.answer.contains(answer)) {
+        return if (question.answer.contains(answer) || question == Question.IDLE) {
             question = question.nextQuestion()
-            "Отлично - это правильный ответ!\n${question.question}" to status.color
+            "Отлично - ты справился\n${question.question}" to status.color
+        } else if (status == Status.CRITICAL) {
+            status = status.nextStatus()
+            question = Question.NAME
+            "Это неправильный ответ. Давай все по новой\n${question.question}" to status.color
         } else {
             status = status.nextStatus()
-            "Это не правильный ответ!\n${question.question}" to status.color
+            "Это неправильный ответ\n${question.question}" to status.color
         }
     }
 
@@ -37,7 +41,7 @@ class Bender(var status: Status = Status.NORMAL, var question: Question = Questi
     }
 
     enum class Question(val question: String, val answer: List<String>) {
-        NAME("Как меня зовут?", listOf("Бендер", "bender")) {
+        NAME("Как меня зовут?", listOf("Бендер", "Bender")) {
             override fun nextQuestion(): Question = PROFESSION
         },
         PROFESSION("Назови мою профессию?", listOf("сгибальщик", "bender")) {

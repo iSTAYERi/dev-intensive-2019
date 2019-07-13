@@ -10,6 +10,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
+import ru.skillbranch.devintensive.extensions.hideKeyboard
 import ru.skillbranch.devintensive.models.Bender
 
 class MainActivity : AppCompatActivity() {
@@ -39,8 +40,7 @@ class MainActivity : AppCompatActivity() {
         Log.d("test1", "onCreate, $status $question")
 
         val (r, g, b) = benderObj.status.color
-        //TODO поменять мод фильтра под пнг
-        benderImage.setColorFilter(Color.rgb(r,g,b), PorterDuff.Mode.SRC_IN)
+        benderImage.setColorFilter(Color.rgb(r,g,b), PorterDuff.Mode.MULTIPLY)
 
         textTxt.text = benderObj.askQuestion()
     }
@@ -78,14 +78,15 @@ class MainActivity : AppCompatActivity() {
         Log.d("test1", "onSaveInstanceState ${benderObj.status.name} ${benderObj.question.name}")
     }
 
-    fun onClick(view: View) {
+    private fun onClick(view: View) {
         if (view.id == R.id.iv_send) {
-            val (phrase, color) = benderObj.listenAnswer(messageEt.text.toString().toLowerCase())
+            //TODO перенести toLowerCase в реализацию
+            val (phrase, color) = benderObj.listenAnswer(messageEt.text.toString())
             messageEt.setText("")
             val (r, g, b) = color
-            //TODO поменять мод фильтра под пнг
-            benderImage.setColorFilter(Color.rgb(r,g,b), PorterDuff.Mode.SRC_IN)
+            benderImage.setColorFilter(Color.rgb(r,g,b), PorterDuff.Mode.MULTIPLY)
             textTxt.text = phrase
+            hideKeyboard()
         }
     }
 

@@ -24,7 +24,7 @@
         android:id="@+id/iv_bender"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:src="@drawable/ic_sentiment_satisfied_black_24dp"
+        android:src="@drawable/bender_dance"
         android:layout_weight="1" />
 
     <LinearLayout
@@ -34,19 +34,19 @@
         android:background="@color/color_primary"
         android:layout_marginTop="@dimen/font_normal_16">
 
-        <androidx.appcompat.widget.AppCompatEditText
+        <EditText
             android:id="@+id/et_message"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_normal_16"
+            android:layout_marginEnd="@dimen/spacing_normal_16"
             android:layout_weight="1"
-            android:lines="1"
-            android:textColor="@color/color_gray_light"
-            android:textColorHint="@color/color_gray_light"
             android:hint="Введите текст"
             android:paddingTop="@dimen/spacing_normal_16"
             android:paddingBottom="@dimen/spacing_normal_16"
-            android:layout_marginStart="@dimen/spacing_normal_16"
-            android:layout_marginEnd="@dimen/spacing_normal_16" />
+            android:singleLine="true"
+            android:textColor="@color/color_gray_light"
+            android:textColorHint="@color/color_gray_light" />
 
         <ImageView
             android:id="@+id/iv_send"
