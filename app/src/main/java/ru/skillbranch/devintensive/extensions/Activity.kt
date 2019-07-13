@@ -11,3 +11,7 @@ fun Activity.hideKeyboard() {
         imm?.hideSoftInputFromWindow(v.windowToken, 0)
     }
 }
+
+fun isKeyboardClosed(): Boolean {
+    return true
+}
