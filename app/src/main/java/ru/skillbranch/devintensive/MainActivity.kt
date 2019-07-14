@@ -104,7 +104,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun sendAnswerToBender() {
-        //TODO перенести toLowerCase в реализацию
         val (phrase, color) = benderObj.listenAnswer(messageEt.text.toString())
         messageEt.setText("")
         val (r, g, b) = color
