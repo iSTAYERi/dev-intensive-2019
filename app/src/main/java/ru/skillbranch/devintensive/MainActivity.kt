@@ -12,23 +12,26 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import ru.skillbranch.devintensive.extensions.hideKeyboard
+import ru.skillbranch.devintensive.extensions.isKeyboardClosed
 import ru.skillbranch.devintensive.models.Bender
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var benderImage: ImageView
-    lateinit var textTxt: TextView
-    lateinit var messageEt: EditText
-    lateinit var sendBtn: ImageView
+    private lateinit var benderImage: ImageView
+    private lateinit var textTxt: TextView
+    private lateinit var messageEt: EditText
+    private lateinit var sendBtn: ImageView
 
-    lateinit var benderObj: Bender
+    private lateinit var benderObj: Bender
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        benderImage = iv_bender
         textTxt = tv_text
+        benderImage = iv_bender.apply {
+            setOnClickListener { onClick(it) }
+        }
         sendBtn = iv_send.apply {
             setOnClickListener { onClick(it) }
         }
@@ -93,6 +96,10 @@ class MainActivity : AppCompatActivity() {
                 hideKeyboard()
             }
             R.id.et_message -> sendAnswerToBender()
+            R.id.iv_bender -> {
+                Log.d("test1", "isKeyboardClosed: ${isKeyboardClosed()}")
+                if (!isKeyboardClosed()) hideKeyboard()
+            }
         }
     }
 
