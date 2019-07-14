@@ -26,3 +26,5 @@ fun Activity.isKeyboardClosed(): Boolean {
 
     return !result
 }
+
+fun Activity.isKeyboardOpen() = !isKeyboardClosed()
