@@ -37,7 +37,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ass" />
 
-    <ImageView
+    <ru.skillbranch.devintensive.ui.custom.CircleImageView
         android:id="@+id/iv_avatar"
         android:layout_width="@dimen/avatar_round_size"
         android:layout_height="@dimen/avatar_round_size"
@@ -47,7 +47,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:srcCompat="@drawable/avatar_default" />
+        android:src="@drawable/avatar_default"/>
 
     <ImageButton
         android:id="@+id/btn_switch_theme"
@@ -78,7 +78,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@drawable/btn_round_bg_trans"
-        android:text="John Doe"
         app:layout_constraintBottom_toTopOf="@+id/tv_rank"
         app:layout_constraintEnd_toEndOf="@+id/iv_avatar"
         app:layout_constraintHorizontal_bias="0.5"
@@ -92,7 +91,6 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
         android:background="@drawable/btn_round_bg_trans"
-        android:text="Junior Android Developer"
         app:layout_constraintBottom_toTopOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="@+id/tv_nick_name"
         app:layout_constraintHorizontal_bias="0.5"
@@ -125,8 +123,7 @@
         style="@style/Profile.Metrics.Value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="0"
-        android:drawableLeft="@drawable/ic_sp_24"
+        android:drawableStart="@drawable/ic_sp_24"
         app:layout_constraintBottom_toTopOf="@+id/textView4"
         app:layout_constraintEnd_toStartOf="@+id/divider"
         app:layout_constraintHorizontal_bias="0.5"
@@ -151,8 +148,7 @@
         style="@style/Profile.Metrics.Value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="0"
-        android:drawableLeft="@drawable/ic_respect_24"
+        android:drawableStart="@drawable/ic_respect_24"
         app:layout_constraintBottom_toTopOf="@+id/textView6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/divider"

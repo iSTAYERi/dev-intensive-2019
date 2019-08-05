@@ -91,4 +91,44 @@ object Utils {
         }
     }
 
+    fun isRepositoryValid(repository: String): Boolean {
+        if (repository.isEmpty()) return true
+        var repo = repository
+
+        if (repo.startsWith("https://")) {
+            repo = repo.replace("https://", "")
+        }
+        if (repo.startsWith("www.")) {
+            repo = repo.replace("www.", "")
+        }
+
+        if (!repo.startsWith("github.com/")) {
+            return false
+        }
+
+        repo = repo.replace("github.com/", "")
+
+        repoExcludeSet.forEach {
+            if (repo.startsWith(it) && (repo.length == it.length || repo[it.length] == '/')) return false
+        }
+
+        return Regex("^[A-Za-z0-9]+(-[A-Za-z0-9]+)*/?$").matches(repo)
+    }
+
+    private val repoExcludeSet = setOf(
+        "enterprise",
+        "features",
+        "topics",
+        "collections",
+        "trending",
+        "events",
+        "marketplace",
+        "pricing",
+        "nonprofit",
+        "customer-stories",
+        "security",
+        "login",
+        "join"
+    )
+
 }
