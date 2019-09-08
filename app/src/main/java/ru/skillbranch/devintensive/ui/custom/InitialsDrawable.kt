@@ -3,25 +3,23 @@ package ru.skillbranch.devintensive.ui.custom
 import android.content.Context
 import android.graphics.*
 import android.graphics.drawable.Drawable
-import android.util.TypedValue
 import ru.skillbranch.devintensive.R
 
 class InitialsDrawable(
     private val initials: String,
+    initialsSize: Int,
+    drawableSize: Int,
     private val context: Context
 ) : Drawable() {
 
     private val paint = Paint()
 
     init {
-        val size = 112 * context.resources.displayMetrics.density
-        setBounds(0, 0, size.toInt(), size.toInt())
+        setBounds(0, 0, drawableSize, drawableSize)
 
-        val textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 48f, context.resources.displayMetrics)
-        paint.textSize = textSize
+        paint.textSize = initialsSize.toFloat()
         paint.isAntiAlias = true
         paint.isFakeBoldText = true
-        paint.setShadowLayer(6f, 0f, 0f, Color.BLACK)
         paint.style = Paint.Style.FILL
         paint.textAlign = Paint.Align.CENTER
     }
@@ -33,7 +31,7 @@ class InitialsDrawable(
         paint.color = Color.WHITE
         canvas.drawText(
             initials, 0, initials.length, bounds.centerX().toFloat(),
-            bounds.centerY().toFloat() - paint.ascent() / 2, paint
+            bounds.centerY().toFloat() - paint.ascent() * .4f, paint
         )
     }
 

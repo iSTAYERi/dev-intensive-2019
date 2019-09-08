@@ -6,12 +6,30 @@
     <color name="color_accent">#fc4c4c</color>
     <color name="color_accent_night">#2196f3</color>
     <color name="color_accent_secondary">#BEAC32EE</color>
-    <color name="color_gray">#9ca9ba</color>
+    <color name="color_white">#FFFFFF</color>
+    <color name="color_gray">#9CA9BA</color>
     <color name="color_gray_dark">#675f7f</color>
     <color name="color_gray_dark_trans">#CD675F7F</color>
     <color name="color_gray_darkest_trans">#CD555555</color>
-    <color name="color_gray_light">#ececec</color>
+    <color name="color_gray_light">#ECECEC</color>
 
     <color name="color_divider_dark">#1F000000</color>
     <color name="color_divider_light">#1FFFFFFF</color>
+
+    <color name="color_item_background">#FFFFFF</color>
+    <color name="color_item_title">#2A1956</color>
+    <color name="color_item_message">#675F7F</color>
+
+    <color name="color_primary_night">#272727</color>
+    <color name="color_primary_dark_night">#2196F3</color>
+
+    <color name="color_item_background_night">#1D1D1D</color>
+    <color name="color_item_title_night">#FFFFFF</color>
+    <color name="color_item_message_night">#9CA9BA</color>
+
+    <color name="color_indicator">#581F99</color>
+    <color name="color_green">#4FD149</color>
+
+    <color name="color_indicator_night">#675F7F</color>
+
 </resources>

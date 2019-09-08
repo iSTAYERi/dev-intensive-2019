@@ -37,7 +37,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ass" />
 
-    <ru.skillbranch.devintensive.ui.custom.CircleImageView
+    <ru.skillbranch.devintensive.ui.custom.CircleImageView2
         android:id="@+id/iv_avatar"
         android:layout_width="@dimen/avatar_round_size"
         android:layout_height="@dimen/avatar_round_size"

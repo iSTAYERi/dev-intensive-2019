@@ -36,16 +36,16 @@ class CircleImageView @JvmOverloads constructor(
         private const val DEFAULT_CIRCLE_BACKGROUND_COLOR = Color.TRANSPARENT
     }
 
-    var initials: String? = null
-        set(value) {
-            if (field == value) return
-            field = value
-            if (value != null) {
-                setImageDrawable(InitialsDrawable(value, context))
-            } else {
-                setImageResource(R.drawable.avatar_default)
-            }
-        }
+//    var initials: String? = null
+//        set(value) {
+//            if (field == value) return
+//            field = value
+//            if (value != null) {
+//                setImageDrawable(InitialsDrawable(value, context))
+//            } else {
+//                setImageResource(R.drawable.avatar_default)
+//            }
+//        }
 
     private val drawableRect = RectF()
     private val borderRect = RectF()

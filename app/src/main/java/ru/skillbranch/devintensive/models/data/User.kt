@@ -1,4 +1,4 @@
-package ru.skillbranch.devintensive.models
+package ru.skillbranch.devintensive.models.data
 
 import ru.skillbranch.devintensive.utils.Utils
 import java.util.*
@@ -10,8 +10,8 @@ data class User(
     var avatar: String?,
     var rating: Int = 0,
     var respect: Int = 0,
-    var lastVisit: Date? = Date(),
-    var isOnline: Boolean = false
+    val lastVisit: Date? = Date(),
+    val isOnline: Boolean = false
 ) {
 
     constructor(id: String, firstName: String?, lastName: String?) : this(
@@ -36,7 +36,7 @@ data class User(
         private var avatar: String? = null
         private var rating: Int = 0
         private var respect: Int = 0
-        private var lastVisit: Date? = Date()
+        private var lastVisit: Date? = null
         private var isOnline: Boolean = false
 
         fun id(id: String) = apply { this.id = id }
@@ -67,7 +67,11 @@ data class User(
 
             val (firstName, lastName) = Utils.parseFullName(fullName)
 
-            return User(lastId.toString(), firstName, lastName)
+            return User(
+                lastId.toString(),
+                firstName,
+                lastName
+            )
         }
     }
 

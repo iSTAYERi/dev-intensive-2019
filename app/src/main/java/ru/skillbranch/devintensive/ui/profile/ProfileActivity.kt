@@ -14,7 +14,6 @@ import androidx.lifecycle.ViewModelProviders
 import kotlinx.android.synthetic.main.activity_profile_constraint.*
 import ru.skillbranch.devintensive.R
 import ru.skillbranch.devintensive.models.Profile
-import ru.skillbranch.devintensive.models.initials
 import ru.skillbranch.devintensive.viewmodels.ProfileViewModel
 
 class ProfileActivity : AppCompatActivity() {
@@ -57,7 +56,7 @@ class ProfileActivity : AppCompatActivity() {
                 v.text = it[k].toString()
             }
         }
-        iv_avatar.initials = profile.initials
+//        iv_avatar.initials = profile.initials
     }
 
     private fun updateRepoError(isError: Boolean) {
@@ -98,7 +97,7 @@ class ProfileActivity : AppCompatActivity() {
             }
         })
 
-        iv_avatar.initials = null
+//        iv_avatar.initials = null
     }
 
     private fun showCurrentMode(isEdit: Boolean) {
